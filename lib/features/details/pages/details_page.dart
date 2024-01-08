@@ -25,7 +25,7 @@ class DetailsPage extends StatelessWidget {
             builder: (context, state) {
               final itemModel = state.itemModel;
               if (itemModel == null) {
-                return const CircularProgressIndicator();
+                return const Center(child: CircularProgressIndicator());
               }
               return ListView(
                 padding: const EdgeInsets.symmetric(
@@ -94,7 +94,7 @@ class _ListViewItem extends StatelessWidget {
                         ),
                         const SizedBox(height: 10),
                         Text(
-                          itemModel.releaseDate.toString(),
+                          itemModel.releaseDateFormatted(),
                         ),
                       ],
                     ),
